@@ -48,6 +48,7 @@ class Paciente(models.Model):
    nombres = models.CharField(max_length=255)
    apellidos = models.CharField(null=True, blank=True)
    direccion = models.CharField(default=False)
+   nro_documento = models.CharField(default=False)
    fecha_nacimiento = models.CharField(default=False)
    created_at = models.DateTimeField(auto_now_add=True)
    tipo_documento_id = models.ForeignKey(TipoDocumentoIdentidad,on_delete=models.CASCADE, null=True, blank=True)
@@ -64,6 +65,7 @@ class CitaMedica(models.Model):
    observaciones = models.CharField(null=True, blank=True)
    created_at = models.DateTimeField(auto_now_add=True)
    paciente_id = models.ForeignKey(Paciente,on_delete=models.CASCADE, null=True, blank=True)
+   doctor_id = models.ForeignKey(Doctor,on_delete=models.CASCADE, null=True, blank=True)
    especialidad_id = models.ForeignKey(Especialidad,on_delete=models.CASCADE, null=True, blank=True)
    username = models.ForeignKey(Usuario,on_delete=models.CASCADE, null=True, blank=True)
   

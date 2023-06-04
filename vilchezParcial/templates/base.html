@@ -6,7 +6,7 @@
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-       <title>Lista de tareas</title>
+       <title>Examen Parcial Taler de Lenguajes de programación</title>
    </head>
 
    <body>
@@ -16,8 +16,12 @@
                 <span>Hola {{ request.user.username | title }}</span>
 
                 <a href="{%url 'home'%}"><i class="bi bi-house-fill"></i> Inicio</a>
-                <a href="{% url 'tasks' %}"><i class="bi bi-list-task"></i> Mis Tareas</a>                
-                <a href="{% url 'task-create' %}"><i class="bi bi-list-task"></i> Crear Tarea</a>                
+                <a href="{%url 'tipodocumento'%}"><i class="bi bi-list-document"></i> Tipos de Documento</a> 
+                <a href="{%url 'tiposeguro'%}"><i class="bi bi-list-document"></i> Tipos de Seguro</a>   
+                <a href="{%url 'paciente'%}"><i class="bi bi-list-document"></i> Lista de Pacientes</a>            
+                <a href="{%url 'especialidades'%}"><i class="bi bi-list-document"></i> Lista de Especialidades</a>  
+                <a href="{%url 'doctores'%}"><i class="bi bi-list-document"></i> Lista de Doctores</a>     
+                <a href="{%url 'citas'%}"><i class="bi bi-list-document"></i> Lista de Citas</a>                                                                                                                                                                                
                 <a href="{% url 'logout' %}">Logout</a>
             {%else%}
             <a href="{% url 'home' %}">Inicio</a>
